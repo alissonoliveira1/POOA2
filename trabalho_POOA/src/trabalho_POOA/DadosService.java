@@ -3,16 +3,14 @@ package trabalho_POOA;
 import java.util.List;
 
 public class DadosService {
-
+	
     private ForceUI<DadosInsert> forceUI;
     private ForceUIUsuario<Usuario> forceUIUsuario;
 
+   
     public DadosService(ForceUI<DadosInsert> forceUI, ForceUIUsuario<Usuario> forceUIUsuario) {
         this.forceUI = forceUI;
         this.forceUIUsuario = forceUIUsuario;
-    }
-    public DadosService(ForceUI<DadosInsert> forceUI) {
-        this.forceUI = forceUI;
     }
 
     
@@ -46,22 +44,26 @@ public class DadosService {
 
 
     public void criarUsuario(Usuario usuario) {
-    	forceUIUsuario.criarUsuario(usuario);
+        if (forceUIUsuario != null) {
+            forceUIUsuario.criarUsuario(usuario);
+        } else {
+            System.err.println("Erro: forceUIUsuario não está inicializado.");
+        }
     }
 
     public void atualizarUsuario(int idUser, String username, String senha) {
-    	forceUIUsuario.atualizarUsuario(idUser, username, senha);
+        forceUIUsuario.atualizarUsuario(idUser, username, senha);
     }
 
     public List<Usuario> listarUsuarios() {
-        return forceUIUsuario.listarUsuarios();
+        return forceUIUsuario.listarUsuarios(); 
     }
 
     public boolean deletarUsuario(int idUser) {
         return forceUIUsuario.deletarUsuario(idUser);
     }
 
-    public void alterarSenhaUsuario(int idUser, String novaSenha) {
-    	forceUIUsuario.alterarSenha(idUser, novaSenha);
+    public void alterarSenha(int idUser, String novaSenha) {
+        forceUIUsuario.alterarSenha(idUser, novaSenha);
     }
-}
+    }

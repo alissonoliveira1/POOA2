@@ -6,11 +6,12 @@
   <dependencies>
     
 
-<dependency>
-    <groupId>org.hsqldb</groupId>
-    <artifactId>hsqldb</artifactId>
-    <version>2.7.3</version> <!-- Verifique se esta é a versão mais recente -->
-</dependency>
+<!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
+	<dependency>
+	    <groupId>org.hsqldb</groupId>
+	    <artifactId>hsqldb</artifactId>
+	    <version>2.7.3</version>
+	</dependency>
 
         
    

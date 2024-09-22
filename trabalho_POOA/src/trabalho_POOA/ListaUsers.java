@@ -5,17 +5,18 @@ import java.util.List;
 public class ListaUsers implements ForceUIUsuario<Usuario> {
 
 
-	
+
 
 	    private List<Usuario> usuarios = new ArrayList<>();
+	  
 	    private int count = 1;
-
+	
 	    @Override
-	    public void criarUsuario(Usuario usuario) {
-	        if (usuario.getUser() == null) {
-	            usuario.setUser("user" + count++);
+	    public void criarUsuario(Usuario user) {
+	        if (user.getUser() == null) {
+	            user.setUser("user" + count++);
 	        }
-	        usuarios.add(usuario);
+	        usuarios.add(user);
 	    }
 
 	    @Override
